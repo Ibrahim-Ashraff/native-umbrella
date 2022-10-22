@@ -15,14 +15,14 @@ const PasswordScreen = () => {
 	const [message, setMessage] = useState("");
 
 	useEffect(() => {
-		const something = password.join("");
+		const pin = password.join("");
 
-		if (something?.length === 4 && something != "1234") {
+		if (pin?.length === 4 && pin != "1234") {
 			setMessage("PIN doesn't match");
 			setTimeout(() => {
 				setPassword(initialPasswordState);
 			}, 1000);
-		} else if (something?.length === 4 && something == "1234") {
+		} else if (pin?.length === 4 && pin == "1234") {
 			alert("success");
 			setPassword(initialPasswordState);
 		} else {
